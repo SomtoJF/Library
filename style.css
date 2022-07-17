@@ -4,7 +4,7 @@
     --backgroundcolor: #E5E4E2;
     --maxHeight: 100vh;
     --maxWidth: 100vw;
-    --bookwidth: 20%;
+    --bookwidth: max(250px,20%);
     --bookheight: 90%;
 }
 nav{
@@ -41,14 +41,13 @@ body{
 }
 #bookscontainer{
     width: var(--maxWidth);
-    padding: 0px 25px;
     height: 40vh;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 5%;
 }
-.book{
+#bookscontainer > div{
     height: var(--bookheight);
     width: var(--bookwidth);
     background-color: white;
