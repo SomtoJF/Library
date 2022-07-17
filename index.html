@@ -14,7 +14,22 @@
         <h1>Library</h1>
     </nav>
     <div id="container">
-        <button id="addbook"><h4>+ Add Book</h4></button>
+        <div id="formcontainer">
+            <form action="">
+                <button id="addbook" type="submit"><h4>+ Add Book</h4></button>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" required>
+                <label for="pages">No. of Pages</label>
+                <input type="number" name="pages" id="pages" required>
+                <fieldset>
+                    <legend>Read or Not</legend>
+                    <label for="read">Read</label>
+                    <input type="radio" name="readstatus" id="read" required>
+                    <label for="notread">Not Read</label>
+                    <input type="radio" name="readstatus" id="notread" required>
+                </fieldset>
+            </form>
+        </div>
         <div id="bookscontainer">
             <!-- <div></div>
             <div></div>
