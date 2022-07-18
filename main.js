@@ -71,6 +71,23 @@ function createBook(){
         readButton.setAttribute('class', 'bookbutton');
         removeBookButton.setAttribute('class', 'bookbutton');
 
+        if(library[i].read == 'Read'){
+            readButton.style.backgroundColor = 'lime';
+        }
+        else{
+            readButton.style.backgroundColor = 'pink';
+        };
+        
+        readButton.addEventListener('click',function () {
+            if(library[i].read == 'Read'){
+                library[i].read = 'Not read';
+            }
+            else{
+                library[i].read = 'Read';
+            };
+            createBook();
+        });
+
         bookitem.appendChild(titleDiv);
         bookitem.appendChild(authorDiv);
         bookitem.appendChild(pagesDiv);
