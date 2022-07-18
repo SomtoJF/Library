@@ -77,7 +77,7 @@ function createBook(){
         else{
             readButton.style.backgroundColor = 'pink';
         };
-        
+
         readButton.addEventListener('click',function () {
             if(library[i].read == 'Read'){
                 library[i].read = 'Not read';
@@ -85,6 +85,11 @@ function createBook(){
             else{
                 library[i].read = 'Read';
             };
+            createBook();
+        });
+
+        removeBookButton.addEventListener('click', function (){
+            library.splice(i,1);
             createBook();
         });
 
