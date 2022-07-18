@@ -13,6 +13,8 @@ let bookitem;
 let titleDiv;
 let authorDiv;
 let pagesDiv;
+let readButton;
+let removeBookButton;
 let library = [];
 
 function book(title,author,pages,read) {
@@ -36,9 +38,9 @@ newBook.addEventListener('click', function (){
 function getRadioValue(){
     for(let i = 0; i < readStatus.length; i++){
         if(readStatus[i].checked && i == 0){
-            return 'read';
+            return 'Read';
         }else{
-            return 'not read';
+            return 'Not read';
         };
     };
 };
@@ -55,14 +57,25 @@ function createBook(){
     for(let i = 0; i < library.length; i++){
         bookitem = document.createElement('div');
         titleDiv = document.createElement('div');
-        titleDiv.textContent = library[i].title;
         authorDiv = document.createElement('div');
-        authorDiv.textContent = library[i].author;
         pagesDiv = document.createElement('div');
-        pagesDiv.textContent = library[i].pages;
+        readButton = document.createElement('button');
+        removeBookButton = document.createElement('button');
+
+        titleDiv.textContent = library[i].title;
+        authorDiv.textContent = library[i].author;
+        pagesDiv.textContent = `${library[i].pages} pages`;
+        readButton.textContent = library[i].read;
+        removeBookButton.textContent = 'Remove';
+
+        readButton.setAttribute('class', 'bookbutton');
+        removeBookButton.setAttribute('class', 'bookbutton');
+
         bookitem.appendChild(titleDiv);
         bookitem.appendChild(authorDiv);
         bookitem.appendChild(pagesDiv);
+        bookitem.appendChild(readButton);
+        bookitem.appendChild(removeBookButton);
         booksContainer.appendChild(bookitem);
     };
 };
