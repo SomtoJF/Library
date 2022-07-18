@@ -46,6 +46,7 @@ button[type="submit"]{
     border-radius: 15px;
     color: var(--charcoal);
     border: dashed 2px grey;
+    width: 100px;
 }
 #newbook:active{
     border: dashed 2px var(--charcoal);
@@ -62,6 +63,7 @@ button[type="submit"]{
     border: dashed 2px grey;
     border-radius: 15px;
     padding: 20px;
+    background-color: white;
 }
 #formcontainer input{
     display: block;
