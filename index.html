@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -15,8 +15,8 @@
     </nav>
     <div id="container">
         <div id="formcontainer">
-            <form action="">
-                <button id="addbook" type="submit"><h4>+ Add Book</h4></button>
+            <button id="newbook"><h4>+ New Book</h4></button>
+            <form action="" id="form">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" maxlength="50" required>
                 <label for="author">Author</label>
@@ -30,11 +30,17 @@
                     <label for="notread">Not Read</label>
                     <input type="radio" name="readstatus" id="notread" required>
                 </fieldset>
+                <button id="addbook" type="submit"><h4>+ Add Book</h4></button>
             </form>
         </div>
         <div id="bookscontainer">
+            <!-- <div>
+                <div>The Hobbit</div>
+                <div>J R Tolkien</div>
+                <div>292 pages</div>
+                <button id="readbutton" class="bookbutton">Not Read</button>
+            </div> -->
             <!-- <div></div>
-            <div></div>
             <div></div>
             <div></div>
             <div></div>

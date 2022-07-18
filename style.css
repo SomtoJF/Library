@@ -7,6 +7,7 @@
     --maxWidth: 100vw;
     --bookwidth: max(250px,20%);
     --bookheight: 90%;
+    --formwidth: 250px;
 }
 nav{
     background-color: white;
@@ -30,7 +31,7 @@ body{
     align-items: center;
     gap: 10px;
 }
-#addbook{
+button[type="submit"]{
     width: 100px;
     border: solid 2px darkgray;
     background-color: white;
@@ -41,8 +42,20 @@ body{
     background-color: darkgray;
     border: solid 2px white ;
 }
+#newbook{
+    border-radius: 15px;
+    color: var(--charcoal);
+    border: dashed 2px grey;
+}
+#newbook:active{
+    border: dashed 2px var(--charcoal);
+}
 #formcontainer form{
-    display: flex;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    margin-left: calc(-1 * var(--formwidth) * 0.5);
     flex-direction: column;
     align-items: center;
     gap: 5px;

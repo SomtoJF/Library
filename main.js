@@ -1,3 +1,4 @@
+let newBook = document.getElementById('newbook');
 let form = document.getElementById('form');
 let addBook = document.getElementById('addbook');
 let title = document.getElementById('title');
@@ -6,6 +7,7 @@ let pages = document.getElementById('pages');
 let readStatus = document.getElementsByName('readstatus');
 let read = document.getElementById('read');
 let notRead = document.getElementById('notread');
+let cancel = document.getElementById('cancel');
 let booksContainer = document.getElementById('bookscontainer');
 let bookitem;
 let library = [];
@@ -19,6 +21,14 @@ function book(title,author,pages,read) {
 book.prototype.info = function () {
     return `${this.title}, written by ${this.author}, ${this.pages} pages, ${this.read}.`;
 };
+
+newBook.addEventListener('click', function (){
+    if(form.style.display =='flex'){
+        form.style.display = 'none';
+    }else{
+        form.style.display = 'flex';
+    }
+});
 
 function getRadioValue(){
     for(let i = 0; i < readStatus.length; i++){
