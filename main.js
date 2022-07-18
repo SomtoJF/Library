@@ -10,6 +10,9 @@ let notRead = document.getElementById('notread');
 let cancel = document.getElementById('cancel');
 let booksContainer = document.getElementById('bookscontainer');
 let bookitem;
+let titleDiv;
+let authorDiv;
+let pagesDiv;
 let library = [];
 
 function book(title,author,pages,read) {
@@ -51,6 +54,15 @@ function createBook(){
 
     for(let i = 0; i < library.length; i++){
         bookitem = document.createElement('div');
+        titleDiv = document.createElement('div');
+        titleDiv.textContent = library[i].title;
+        authorDiv = document.createElement('div');
+        authorDiv.textContent = library[i].author;
+        pagesDiv = document.createElement('div');
+        pagesDiv.textContent = library[i].pages;
+        bookitem.appendChild(titleDiv);
+        bookitem.appendChild(authorDiv);
+        bookitem.appendChild(pagesDiv);
         booksContainer.appendChild(bookitem);
     };
 };
