@@ -109,6 +109,3 @@ form.addEventListener('submit',function (e){
     form.reset();
 });
 
-
-// let hobbit = new book('hobbit','jr tolkien',292,'read');
-// console.log(hobbit.info());
