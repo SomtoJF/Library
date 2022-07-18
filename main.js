@@ -7,6 +7,7 @@ let readStatus = document.getElementsByName('readstatus');
 let read = document.getElementById('read');
 let notRead = document.getElementById('notread');
 let booksContainer = document.getElementById('bookscontainer');
+let bookitem;
 let library = [];
 
 function book(title,author,pages,read) {
@@ -34,8 +35,19 @@ function addBookToLibrary(){
     library[library.length] = new book(title.value,author.value,pages.value, getRadioValue());
 };
 
+function createBook(){
+    //delete all child nodes first
+   booksContainer.innerHTML = "";
+
+    for(let i = 0; i < library.length; i++){
+        bookitem = document.createElement('div');
+        booksContainer.appendChild(bookitem);
+    };
+};
+
 form.addEventListener('submit',function (e){
     addBookToLibrary();
+    createBook();
     e.preventDefault();
     form.reset();
 });
