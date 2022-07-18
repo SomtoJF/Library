@@ -16,7 +16,7 @@ function book(title,author,pages,read) {
     this.read = read;
 };
 book.prototype.info = function () {
-    return `${this.title}, written by ${this.author}, ${this.pages} pages, ${this.read}`;
+    return `${this.title}, written by ${this.author}, ${this.pages} pages, ${this.read}.`;
 };
 
 function getRadioValue(){
@@ -29,10 +29,15 @@ function getRadioValue(){
     };
 };
 
-form.addEventListener('submit',function (e){
+function addBookToLibrary(){
+    //create new book object and add it to library array
     library[library.length] = new book(title.value,author.value,pages.value, getRadioValue());
-    alert(library[0].title);
+};
+
+form.addEventListener('submit',function (e){
+    addBookToLibrary();
     e.preventDefault();
+    form.reset();
 });
 
 
