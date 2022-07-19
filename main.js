@@ -18,8 +18,15 @@ let removeBookButton;
 let library = [];
 
 function book(title,author,pages,read) {
-    this.title = title;
-    this.author = author;
+    let capitalize = function (string){
+        string = string.toLowerCase().split(' ');
+        for(let i = 0; i < string.length; i++){
+            string[i] = string[i].charAt(0).toUpperCase() + string[i].slice(1);
+        };
+        return string.join(' ');
+    };
+    this.title = capitalize(title);
+    this.author = capitalize(author);
     this.pages = pages;
     this.read = read;
 };
