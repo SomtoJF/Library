@@ -19,9 +19,14 @@ let library = [];
 
 function book(title,author,pages,read) {
     let capitalize = function (string){
-        string = string.toLowerCase().split(' ');
+        string = string.split(' ');
         for(let i = 0; i < string.length; i++){
+            if(string[i] == string[i].toUpperCase()){
+
+            }
+            else{
             string[i] = string[i].charAt(0).toUpperCase() + string[i].slice(1);
+            };
         };
         return string.join(' ');
     };
