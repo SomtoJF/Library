@@ -37,6 +37,7 @@ button[type="submit"]{
     background-color: white;
     border-radius: 10px;
     display: block;
+    color: black;
 }
 #addbook:hover{
     background-color: darkgray;
@@ -56,7 +57,7 @@ button[type="submit"]{
     position: fixed;
     z-index: 1;
     left: 50%;
-    margin-left: calc(-1 * var(--formwidth) * 0.5);
+    margin-left: calc((-1 * var(--formwidth) * 0.5) + 20px);
     flex-direction: column;
     align-items: center;
     gap: 5px;
