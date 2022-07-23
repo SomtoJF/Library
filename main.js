@@ -17,26 +17,38 @@ let readButton;
 let removeBookButton;
 let library = [];
 
-function book(title,author,pages,read) {
-    let capitalize = function (string){
-        string = string.split(' ');
-        for(let i = 0; i < string.length; i++){
-            if(string[i] == string[i].toUpperCase()){
+class book{
+    constructor(pages,read){
+        this.title = '';
+        this.author = '';
+        this.pages = pages;
+        this.read = read;
+    }
+    set capitalizeTitle(title){
+        title = title.split(' ');
+        for(let i = 0; i < title.length; i++){
+            if(title[i] == title[i].toUpperCase()){
 
             }
             else{
-            string[i] = string[i].charAt(0).toUpperCase() + string[i].slice(1);
+            title[i] = title[i].charAt(0).toUpperCase() + title[i].slice(1);
             };
         };
-        return string.join(' ');
+        this.title = title.join(' ');
     };
-    this.title = capitalize(title);
-    this.author = capitalize(author);
-    this.pages = pages;
-    this.read = read;
-};
-book.prototype.info = function () {
-    return `${this.title}, written by ${this.author}, ${this.pages} pages, ${this.read}.`;
+    set capitalizeAuthor(author){
+        author = author.split(' ');
+        for(let i = 0; i < author.length; i++){
+            if(author[i] == author[i].toUpperCase()){
+
+            }
+            else{
+            author[i] = author[i].charAt(0).toUpperCase() + author[i].slice(1);
+            };
+        };
+        this.author = author.join(' ');
+    };
+    
 };
 
 newBook.addEventListener('click', function (){
@@ -59,7 +71,11 @@ function getRadioValue(){
 
 function addBookToLibrary(){
     //create new book object and add it to library array
-    library[library.length] = new book(title.value,author.value,pages.value, getRadioValue());
+    let titleValue = title.value;
+    let authorValue = author.value;
+    library[library.length] = new book(pages.value, getRadioValue());
+    library[library.length - 1].capitalizeTitle = titleValue;
+    library[library.length - 1].capitalizeAuthor = authorValue;
 };
 
 function createBook(){
